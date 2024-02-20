@@ -51,13 +51,32 @@
 ">
     <title>Document</title>
 </head>
-<body>
-    <?php foreach($hotels as $hotel): ?>
-        <ul>
-            <?php foreach($hotel as $key => $hotel): ?>
-                <li><?= $key ?>: <?= $hotel ?> </li>            
+<body class='bg-dark'>
+    <div class="container">
+        <table class="table table-dark table-striped">
+
+        <thead>
+            <tr>
+                <th scope="col">Name Hotel</th>
+                <th scope="col">Description</th>
+                <th scope="col">Parking</th>
+                <th scope="col">Vote</th>
+                <th scope="col">Distance to center</th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php foreach($hotels as $hotel): ?>
+            <tr>        
+                <?php foreach($hotel as $hotel): ?> 
+                    
+                    <td><?= $hotel ?></td>                                          
+                
                 <?php endforeach ?>
-        </ul>
-    <?php endforeach ?>
+            </tr>
+                <?php endforeach ?>
+        </tbody>
+        </table>
+    </div>
+
 </body>
 </html>
