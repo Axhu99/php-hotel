@@ -1,5 +1,5 @@
 <?php
-
+/* TODO un data contenente tutto l'array e poi fare includ*/
     $hotels = [
 
         [
@@ -39,6 +39,11 @@
         ],
 
     ];
+    /* fare un arrayfilter dove aggiungo tutti gli HOTEL con quella caratteristica */
+
+    if(!empty($_GET)){
+
+    }
 
 ?>
 
@@ -52,9 +57,20 @@
     <title>Document</title>
 </head>
 <body class='bg-dark'>
+    <header>
+        <div class='container d-flex justify-content-end align-items-center'>
+            <!-- logo -->
+            <form action="" method='get' class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" name='parking'>
+                <label class="form-check-label text-light">With PARKING</label>
+                <button class='btn btn-light' type='submit'>Cerca</button>
+            </form>
+        </div>
+    </header>
+    <main>
     <div class="container">
         <table class="table table-dark table-striped">
-
+<!-- Header della tabella  -->
         <thead>
             <tr>
                 <th scope="col">Name Hotel</th>
@@ -65,6 +81,7 @@
             </tr>
         </thead>
         <tbody>
+<!-- Aggiungo alla tabella ogni elemento dell'array con un ciclo foreach -->
         <?php foreach($hotels as $hotel): ?>
             <tr>        
                 <?php foreach($hotel as $hotel): ?> 
@@ -73,10 +90,10 @@
                 
                 <?php endforeach ?>
             </tr>
-                <?php endforeach ?>
+        <?php endforeach ?>
         </tbody>
         </table>
     </div>
-
+    </main>
 </body>
 </html>
